@@ -1,0 +1,280 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		304E118515ED353900E871EE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 304E118415ED353900E871EE /* UIKit.framework */; };
+		304E118715ED353900E871EE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 304E118615ED353900E871EE /* Foundation.framework */; };
+		304E118915ED353900E871EE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 304E118815ED353900E871EE /* CoreGraphics.framework */; };
+		304E118F15ED353900E871EE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 304E118D15ED353900E871EE /* InfoPlist.strings */; };
+		304E119115ED353900E871EE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 304E119015ED353900E871EE /* main.m */; };
+		304E119515ED353900E871EE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 304E119415ED353900E871EE /* AppDelegate.m */; };
+		304E119815ED353900E871EE /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 304E119715ED353900E871EE /* ViewController.m */; };
+		304E119B15ED353900E871EE /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 304E119915ED353900E871EE /* ViewController.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		304E118015ED353900E871EE /* SBAMobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SBAMobile.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		304E118415ED353900E871EE /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		304E118615ED353900E871EE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		304E118815ED353900E871EE /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		304E118C15ED353900E871EE /* SBAMobile-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SBAMobile-Info.plist"; sourceTree = "<group>"; };
+		304E118E15ED353900E871EE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		304E119015ED353900E871EE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		304E119215ED353900E871EE /* SBAMobile-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SBAMobile-Prefix.pch"; sourceTree = "<group>"; };
+		304E119315ED353900E871EE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		304E119415ED353900E871EE /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		304E119615ED353900E871EE /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		304E119715ED353900E871EE /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		304E119A15ED353900E871EE /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		304E117D15ED353900E871EE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				304E118515ED353900E871EE /* UIKit.framework in Frameworks */,
+				304E118715ED353900E871EE /* Foundation.framework in Frameworks */,
+				304E118915ED353900E871EE /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		304E117515ED353800E871EE = {
+			isa = PBXGroup;
+			children = (
+				304E118A15ED353900E871EE /* SBAMobile */,
+				304E118315ED353900E871EE /* Frameworks */,
+				304E118115ED353900E871EE /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		304E118115ED353900E871EE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				304E118015ED353900E871EE /* SBAMobile.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		304E118315ED353900E871EE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				304E118415ED353900E871EE /* UIKit.framework */,
+				304E118615ED353900E871EE /* Foundation.framework */,
+				304E118815ED353900E871EE /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		304E118A15ED353900E871EE /* SBAMobile */ = {
+			isa = PBXGroup;
+			children = (
+				304E119315ED353900E871EE /* AppDelegate.h */,
+				304E119415ED353900E871EE /* AppDelegate.m */,
+				304E119615ED353900E871EE /* ViewController.h */,
+				304E119715ED353900E871EE /* ViewController.m */,
+				304E119915ED353900E871EE /* ViewController.xib */,
+				304E118B15ED353900E871EE /* Supporting Files */,
+			);
+			path = SBAMobile;
+			sourceTree = "<group>";
+		};
+		304E118B15ED353900E871EE /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				304E118C15ED353900E871EE /* SBAMobile-Info.plist */,
+				304E118D15ED353900E871EE /* InfoPlist.strings */,
+				304E119015ED353900E871EE /* main.m */,
+				304E119215ED353900E871EE /* SBAMobile-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		304E117F15ED353900E871EE /* SBAMobile */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 304E119E15ED353900E871EE /* Build configuration list for PBXNativeTarget "SBAMobile" */;
+			buildPhases = (
+				304E117C15ED353900E871EE /* Sources */,
+				304E117D15ED353900E871EE /* Frameworks */,
+				304E117E15ED353900E871EE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SBAMobile;
+			productName = SBAMobile;
+			productReference = 304E118015ED353900E871EE /* SBAMobile.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		304E117715ED353800E871EE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0430;
+				ORGANIZATIONNAME = "vivekplwl@gmail.com";
+			};
+			buildConfigurationList = 304E117A15ED353800E871EE /* Build configuration list for PBXProject "SBAMobile" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 304E117515ED353800E871EE;
+			productRefGroup = 304E118115ED353900E871EE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				304E117F15ED353900E871EE /* SBAMobile */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		304E117E15ED353900E871EE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				304E118F15ED353900E871EE /* InfoPlist.strings in Resources */,
+				304E119B15ED353900E871EE /* ViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		304E117C15ED353900E871EE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				304E119115ED353900E871EE /* main.m in Sources */,
+				304E119515ED353900E871EE /* AppDelegate.m in Sources */,
+				304E119815ED353900E871EE /* ViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		304E118D15ED353900E871EE /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				304E118E15ED353900E871EE /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		304E119915ED353900E871EE /* ViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				304E119A15ED353900E871EE /* en */,
+			);
+			name = ViewController.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		304E119C15ED353900E871EE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		304E119D15ED353900E871EE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		304E119F15ED353900E871EE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SBAMobile/SBAMobile-Prefix.pch";
+				INFOPLIST_FILE = "SBAMobile/SBAMobile-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		304E11A015ED353900E871EE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SBAMobile/SBAMobile-Prefix.pch";
+				INFOPLIST_FILE = "SBAMobile/SBAMobile-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		304E117A15ED353800E871EE /* Build configuration list for PBXProject "SBAMobile" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				304E119C15ED353900E871EE /* Debug */,
+				304E119D15ED353900E871EE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		304E119E15ED353900E871EE /* Build configuration list for PBXNativeTarget "SBAMobile" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				304E119F15ED353900E871EE /* Debug */,
+				304E11A015ED353900E871EE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 304E117715ED353800E871EE /* Project object */;
+}
