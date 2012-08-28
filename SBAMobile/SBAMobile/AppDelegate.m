@@ -9,8 +9,12 @@
 #import "AppDelegate.h"
 
 #import "ViewController.h"
+#import "HomeScreen.h"
 
 @implementation AppDelegate
+@synthesize screen;
+@synthesize navigationController;
+
 
 @synthesize window = _window;
 @synthesize viewController = _viewController;
@@ -26,8 +30,12 @@
 {
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
     // Override point for customization after application launch.
-    self.viewController = [[[ViewController alloc] initWithNibName:@"ViewController" bundle:nil] autorelease];
-    self.window.rootViewController = self.viewController;
+    //self.viewController = [[[ViewController alloc] initWithNibName:@"ViewController" bundle:nil] autorelease];
+    self.screen = [[[HomeScreen alloc] initWithNibName:@"HomeScreen" bundle:nil] autorelease];
+    navigationController =[[UINavigationController alloc]initWithRootViewController:self.screen];
+    [self.navigationController setNavigationBarHidden:YES];
+    
+    self.window.rootViewController = self.navigationController;
     [self.window makeKeyAndVisible];
     return YES;
 }
