@@ -9,6 +9,10 @@
 #import "HomeScreen.h"
 #import "SearchScreen.h"
 #import "WorkRequestScreen.h"
+#import "CategoryListView.h"
+#import "EventList.h"
+#import "JoinUsScreen.h"
+
 
 @interface HomeScreen ()
 
@@ -52,6 +56,11 @@
 }
 
 - (IBAction)clickToOpenMemberPage:(id)sender {
+    
+    CategoryListView *list=[[CategoryListView alloc]initWithNibName:@"CategoryListView" bundle:nil];
+    [self.navigationController pushViewController:list animated:YES];
+    
+    
 }
 
 - (IBAction)clickedToGoWorkRequest:(id)sender {
@@ -62,11 +71,21 @@
 }
 
 - (IBAction)clickedToEvent:(id)sender {
+    
+    EventList *list=[[EventList alloc]initWithNibName:@"EventList" bundle:nil];
+    [self.navigationController pushViewController:list animated:YES];
+    
 }
 
 - (IBAction)clickedToNews:(id)sender {
+    
+    
 }
 
 - (IBAction)clickedToJoin:(id)sender {
+    
+    JoinUsScreen *scr=[[JoinUsScreen alloc]initWithNibName:@"JoinUsScreen" bundle:nil];
+    [self.navigationController pushViewController:scr animated:YES];
+    
 }
 @end

@@ -19,6 +19,7 @@
 @synthesize telNo;
 @synthesize txtWorkDesc;
 @synthesize scrlView;
+@synthesize budgetArray;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -32,8 +33,103 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self.scrlView setContentSize:CGSizeMake(320, 600)];
     // Do any additional setup after loading the view from its nib.
 }
+
+
+-(BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [textField resignFirstResponder];
+    return YES;
+
+
+}
+
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    UITouch *to=[touches anyObject];
+    if(to.phase==UITouchPhaseBegan)
+    {
+    
+        [self resignKeyBoard];
+    
+    }
+   
+
+}
+
+
+-(void)resignKeyBoard
+{
+    [self.name resignFirstResponder];
+    [self.email resignFirstResponder];
+    [self.telNo resignFirstResponder];
+    [self.txtWorkDesc resignFirstResponder];
+    [self.companyName resignFirstResponder];
+
+}
+
+-(BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text{
+
+    if([text isEqualToString:@"\n"])
+    {
+    
+        [textView resignFirstResponder];
+    
+    }
+    return YES;
+
+}
+
+-(BOOL)textFieldShouldBeginEditing:(UITextField *)textField{
+
+    activeControl=(UITextField *)textField;
+    return YES;
+
+}
+
+-(BOOL)textViewShouldBeginEditing:(UITextView *)textView
+{
+    activeControl= (UITextView *)textView;
+    return YES;
+
+
+}
+
+
+-(void)viewWillAppear:(BOOL)animated{
+
+    NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
+    [center addObserver:self selector:@selector(showKeyboard) name:UIKeyboardDidShowNotification object:nil];
+    [center addObserver:self selector:@selector(hideKeyboard) name:UIKeyboardWillHideNotification object:nil];
+
+}
+
+-(void)showKeyboard
+{
+
+   // [self.scrlView scrollRectToVisible:CGRectMake(self.scrlView.frame.origin.x, self.scrlView.frame.origin.y, self.scrlView.frame.size.width, 120) animated:YES];
+    
+    [self.scrlView scrollRectToVisible:CGRectMake(self.scrlView.frame.origin.x, activeControl.frame.origin.y, self.scrlView.frame.size.width, 200) animated:YES];
+
+}
+
+-(void)hideKeyboard
+{
+
+    [self.scrlView scrollRectToVisible:CGRectZero animated:YES];
+    
+//    CGRect rect=CGRectMake(self.scrlView.frame.origin.x, self.scrlView.frame.origin.y, self.scrlView.contentSize.width,  self.scrlView.frame.size.height);
+//    
+//    [self.scrlView scrollRectToVisible:rect animated:YES];
+
+
+}
+
+
+
+
 
 - (void)viewDidUnload
 {

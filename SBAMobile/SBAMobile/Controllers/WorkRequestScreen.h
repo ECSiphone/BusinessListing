@@ -8,7 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
-@interface WorkRequestScreen : UIViewController<UIAlertViewDelegate>
+@interface WorkRequestScreen : UIViewController<UIAlertViewDelegate,UITextFieldDelegate,UITextViewDelegate>
+{
+
+    UIControl *activeControl;
+
+}
+
+@property (nonatomic,retain) NSMutableArray *budgetArray;
+
 
 @property (retain, nonatomic) IBOutlet UITextView *txtWorkDesc;
 @property (retain, nonatomic) IBOutlet UIScrollView *scrlView;

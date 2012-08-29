@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		301E491615EE84E5003BBBEB /* CategoryListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 301E491415EE84E5003BBBEB /* CategoryListView.m */; };
+		301E491715EE84E5003BBBEB /* CategoryListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 301E491515EE84E5003BBBEB /* CategoryListView.xib */; };
+		301E491B15EE8508003BBBEB /* MemeberListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 301E491915EE8508003BBBEB /* MemeberListView.m */; };
+		301E491C15EE8508003BBBEB /* MemeberListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 301E491A15EE8508003BBBEB /* MemeberListView.xib */; };
 		304E118515ED353900E871EE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 304E118415ED353900E871EE /* UIKit.framework */; };
 		304E118715ED353900E871EE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 304E118615ED353900E871EE /* Foundation.framework */; };
 		304E118915ED353900E871EE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 304E118815ED353900E871EE /* CoreGraphics.framework */; };
@@ -36,9 +40,24 @@
 		304E11CC15ED3F3600E871EE /* SearchListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 304E11CA15ED3F3600E871EE /* SearchListView.xib */; };
 		304E11D015ED473100E871EE /* WorkRequestScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = 304E11CE15ED473100E871EE /* WorkRequestScreen.m */; };
 		304E11D115ED473100E871EE /* WorkRequestScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 304E11CF15ED473100E871EE /* WorkRequestScreen.xib */; };
+		30C7FAF215EE9C5E00862F65 /* CategoryObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 30C7FAF115EE9C5E00862F65 /* CategoryObject.m */; };
+		30C7FAF715EEA10600862F65 /* EventList.m in Sources */ = {isa = PBXBuildFile; fileRef = 30C7FAF515EEA10600862F65 /* EventList.m */; };
+		30C7FAF815EEA10600862F65 /* EventList.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30C7FAF615EEA10600862F65 /* EventList.xib */; };
+		30C7FAFC15EEA12A00862F65 /* EventListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 30C7FAFA15EEA12A00862F65 /* EventListCell.m */; };
+		30C7FAFD15EEA12A00862F65 /* EventListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30C7FAFB15EEA12A00862F65 /* EventListCell.xib */; };
+		30C7FB0115EEA41000862F65 /* EventDetailScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = 30C7FAFF15EEA41000862F65 /* EventDetailScreen.m */; };
+		30C7FB0215EEA41000862F65 /* EventDetailScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30C7FB0015EEA41000862F65 /* EventDetailScreen.xib */; };
+		30C7FB0615EEAB2500862F65 /* JoinUsScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = 30C7FB0415EEAB2500862F65 /* JoinUsScreen.m */; };
+		30C7FB0715EEAB2500862F65 /* JoinUsScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30C7FB0515EEAB2500862F65 /* JoinUsScreen.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		301E491315EE84E5003BBBEB /* CategoryListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CategoryListView.h; path = Controllers/CategoryListView.h; sourceTree = "<group>"; };
+		301E491415EE84E5003BBBEB /* CategoryListView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CategoryListView.m; path = Controllers/CategoryListView.m; sourceTree = "<group>"; };
+		301E491515EE84E5003BBBEB /* CategoryListView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CategoryListView.xib; path = Controllers/CategoryListView.xib; sourceTree = "<group>"; };
+		301E491815EE8508003BBBEB /* MemeberListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MemeberListView.h; path = Controllers/MemeberListView.h; sourceTree = "<group>"; };
+		301E491915EE8508003BBBEB /* MemeberListView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MemeberListView.m; path = Controllers/MemeberListView.m; sourceTree = "<group>"; };
+		301E491A15EE8508003BBBEB /* MemeberListView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MemeberListView.xib; path = Controllers/MemeberListView.xib; sourceTree = "<group>"; };
 		304E118015ED353900E871EE /* SBAMobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SBAMobile.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		304E118415ED353900E871EE /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		304E118615ED353900E871EE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -77,6 +96,20 @@
 		304E11CD15ED473100E871EE /* WorkRequestScreen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WorkRequestScreen.h; path = Controllers/WorkRequestScreen.h; sourceTree = "<group>"; };
 		304E11CE15ED473100E871EE /* WorkRequestScreen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WorkRequestScreen.m; path = Controllers/WorkRequestScreen.m; sourceTree = "<group>"; };
 		304E11CF15ED473100E871EE /* WorkRequestScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WorkRequestScreen.xib; path = Controllers/WorkRequestScreen.xib; sourceTree = "<group>"; };
+		30C7FAF015EE9C5E00862F65 /* CategoryObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CategoryObject.h; path = SBAMobile/databaseObjects/CategoryObject.h; sourceTree = "<group>"; };
+		30C7FAF115EE9C5E00862F65 /* CategoryObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CategoryObject.m; path = SBAMobile/databaseObjects/CategoryObject.m; sourceTree = "<group>"; };
+		30C7FAF415EEA10600862F65 /* EventList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EventList.h; path = Controllers/EventList.h; sourceTree = "<group>"; };
+		30C7FAF515EEA10600862F65 /* EventList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EventList.m; path = Controllers/EventList.m; sourceTree = "<group>"; };
+		30C7FAF615EEA10600862F65 /* EventList.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = EventList.xib; path = Controllers/EventList.xib; sourceTree = "<group>"; };
+		30C7FAF915EEA12A00862F65 /* EventListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EventListCell.h; path = Controllers/EventListCell.h; sourceTree = "<group>"; };
+		30C7FAFA15EEA12A00862F65 /* EventListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EventListCell.m; path = Controllers/EventListCell.m; sourceTree = "<group>"; };
+		30C7FAFB15EEA12A00862F65 /* EventListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = EventListCell.xib; path = Controllers/EventListCell.xib; sourceTree = "<group>"; };
+		30C7FAFE15EEA41000862F65 /* EventDetailScreen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EventDetailScreen.h; path = Controllers/EventDetailScreen.h; sourceTree = "<group>"; };
+		30C7FAFF15EEA41000862F65 /* EventDetailScreen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EventDetailScreen.m; path = Controllers/EventDetailScreen.m; sourceTree = "<group>"; };
+		30C7FB0015EEA41000862F65 /* EventDetailScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = EventDetailScreen.xib; path = Controllers/EventDetailScreen.xib; sourceTree = "<group>"; };
+		30C7FB0315EEAB2500862F65 /* JoinUsScreen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JoinUsScreen.h; path = Controllers/JoinUsScreen.h; sourceTree = "<group>"; };
+		30C7FB0415EEAB2500862F65 /* JoinUsScreen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JoinUsScreen.m; path = Controllers/JoinUsScreen.m; sourceTree = "<group>"; };
+		30C7FB0515EEAB2500862F65 /* JoinUsScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = JoinUsScreen.xib; path = Controllers/JoinUsScreen.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,9 +126,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		301E491D15EE860F003BBBEB /* ObjectClasses */ = {
+			isa = PBXGroup;
+			children = (
+				30C7FAF015EE9C5E00862F65 /* CategoryObject.h */,
+				30C7FAF115EE9C5E00862F65 /* CategoryObject.m */,
+			);
+			name = ObjectClasses;
+			sourceTree = "<group>";
+		};
 		304E117515ED353800E871EE = {
 			isa = PBXGroup;
 			children = (
+				301E491D15EE860F003BBBEB /* ObjectClasses */,
 				304E118A15ED353900E871EE /* SBAMobile */,
 				304E118315ED353900E871EE /* Frameworks */,
 				304E118115ED353900E871EE /* Products */,
@@ -138,6 +181,24 @@
 				304E11C915ED3F3600E871EE /* SearchListView.m */,
 				304E11CA15ED3F3600E871EE /* SearchListView.xib */,
 				304E118B15ED353900E871EE /* Supporting Files */,
+				301E491315EE84E5003BBBEB /* CategoryListView.h */,
+				301E491415EE84E5003BBBEB /* CategoryListView.m */,
+				301E491515EE84E5003BBBEB /* CategoryListView.xib */,
+				301E491815EE8508003BBBEB /* MemeberListView.h */,
+				301E491915EE8508003BBBEB /* MemeberListView.m */,
+				301E491A15EE8508003BBBEB /* MemeberListView.xib */,
+				30C7FAF415EEA10600862F65 /* EventList.h */,
+				30C7FAF515EEA10600862F65 /* EventList.m */,
+				30C7FAF615EEA10600862F65 /* EventList.xib */,
+				30C7FAF915EEA12A00862F65 /* EventListCell.h */,
+				30C7FAFA15EEA12A00862F65 /* EventListCell.m */,
+				30C7FAFB15EEA12A00862F65 /* EventListCell.xib */,
+				30C7FAFE15EEA41000862F65 /* EventDetailScreen.h */,
+				30C7FAFF15EEA41000862F65 /* EventDetailScreen.m */,
+				30C7FB0015EEA41000862F65 /* EventDetailScreen.xib */,
+				30C7FB0315EEAB2500862F65 /* JoinUsScreen.h */,
+				30C7FB0415EEAB2500862F65 /* JoinUsScreen.m */,
+				30C7FB0515EEAB2500862F65 /* JoinUsScreen.xib */,
 			);
 			path = SBAMobile;
 			sourceTree = "<group>";
@@ -247,6 +308,12 @@
 				304E11C715ED3ABC00E871EE /* SearchScreen.xib in Resources */,
 				304E11CC15ED3F3600E871EE /* SearchListView.xib in Resources */,
 				304E11D115ED473100E871EE /* WorkRequestScreen.xib in Resources */,
+				301E491715EE84E5003BBBEB /* CategoryListView.xib in Resources */,
+				301E491C15EE8508003BBBEB /* MemeberListView.xib in Resources */,
+				30C7FAF815EEA10600862F65 /* EventList.xib in Resources */,
+				30C7FAFD15EEA12A00862F65 /* EventListCell.xib in Resources */,
+				30C7FB0215EEA41000862F65 /* EventDetailScreen.xib in Resources */,
+				30C7FB0715EEAB2500862F65 /* JoinUsScreen.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -264,6 +331,13 @@
 				304E11C615ED3ABC00E871EE /* SearchScreen.m in Sources */,
 				304E11CB15ED3F3600E871EE /* SearchListView.m in Sources */,
 				304E11D015ED473100E871EE /* WorkRequestScreen.m in Sources */,
+				301E491615EE84E5003BBBEB /* CategoryListView.m in Sources */,
+				301E491B15EE8508003BBBEB /* MemeberListView.m in Sources */,
+				30C7FAF215EE9C5E00862F65 /* CategoryObject.m in Sources */,
+				30C7FAF715EEA10600862F65 /* EventList.m in Sources */,
+				30C7FAFC15EEA12A00862F65 /* EventListCell.m in Sources */,
+				30C7FB0115EEA41000862F65 /* EventDetailScreen.m in Sources */,
+				30C7FB0615EEAB2500862F65 /* JoinUsScreen.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -375,6 +449,7 @@
 				304E11A015ED353900E871EE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
