@@ -56,6 +56,8 @@
     // e.g. self.myOutlet = nil;
 }
 
+//Vivek again testing...
+
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
