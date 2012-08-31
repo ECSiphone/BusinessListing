@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		301CBC0415F135E000A746BD /* CompanyObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 301CBC0315F135E000A746BD /* CompanyObject.m */; };
+		301CBC0815F13ADF00A746BD /* NewsObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 301CBC0715F13ADF00A746BD /* NewsObject.m */; };
+		301CBC0B15F13E0E00A746BD /* DatabaseHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 301CBC0A15F13E0E00A746BD /* DatabaseHelper.m */; };
+		301CBC0D15F13E3500A746BD /* SBADatabase.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 301CBC0C15F13E3500A746BD /* SBADatabase.sqlite */; };
+		301CBC1315F1435200A746BD /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 301CBC1215F1435200A746BD /* libsqlite3.dylib */; };
 		301E491615EE84E5003BBBEB /* CategoryListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 301E491415EE84E5003BBBEB /* CategoryListView.m */; };
 		301E491715EE84E5003BBBEB /* CategoryListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 301E491515EE84E5003BBBEB /* CategoryListView.xib */; };
 		301E491B15EE8508003BBBEB /* MemeberListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 301E491915EE8508003BBBEB /* MemeberListView.m */; };
@@ -52,6 +57,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		301CBC0215F135E000A746BD /* CompanyObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CompanyObject.h; path = SBAMobile/databaseObjects/CompanyObject.h; sourceTree = "<group>"; };
+		301CBC0315F135E000A746BD /* CompanyObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CompanyObject.m; path = SBAMobile/databaseObjects/CompanyObject.m; sourceTree = "<group>"; };
+		301CBC0615F13ADF00A746BD /* NewsObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NewsObject.h; path = SBAMobile/databaseObjects/NewsObject.h; sourceTree = "<group>"; };
+		301CBC0715F13ADF00A746BD /* NewsObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NewsObject.m; path = SBAMobile/databaseObjects/NewsObject.m; sourceTree = "<group>"; };
+		301CBC0915F13E0E00A746BD /* DatabaseHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DatabaseHelper.h; path = SBAMobile/databaseObjects/DatabaseHelper.h; sourceTree = "<group>"; };
+		301CBC0A15F13E0E00A746BD /* DatabaseHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DatabaseHelper.m; path = SBAMobile/databaseObjects/DatabaseHelper.m; sourceTree = "<group>"; };
+		301CBC0C15F13E3500A746BD /* SBADatabase.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; name = SBADatabase.sqlite; path = images/SBADatabase.sqlite; sourceTree = "<group>"; };
+		301CBC1215F1435200A746BD /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		301E491315EE84E5003BBBEB /* CategoryListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CategoryListView.h; path = Controllers/CategoryListView.h; sourceTree = "<group>"; };
 		301E491415EE84E5003BBBEB /* CategoryListView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CategoryListView.m; path = Controllers/CategoryListView.m; sourceTree = "<group>"; };
 		301E491515EE84E5003BBBEB /* CategoryListView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CategoryListView.xib; path = Controllers/CategoryListView.xib; sourceTree = "<group>"; };
@@ -117,6 +130,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				301CBC1315F1435200A746BD /* libsqlite3.dylib in Frameworks */,
 				304E118515ED353900E871EE /* UIKit.framework in Frameworks */,
 				304E118715ED353900E871EE /* Foundation.framework in Frameworks */,
 				304E118915ED353900E871EE /* CoreGraphics.framework in Frameworks */,
@@ -131,6 +145,12 @@
 			children = (
 				30C7FAF015EE9C5E00862F65 /* CategoryObject.h */,
 				30C7FAF115EE9C5E00862F65 /* CategoryObject.m */,
+				301CBC0215F135E000A746BD /* CompanyObject.h */,
+				301CBC0315F135E000A746BD /* CompanyObject.m */,
+				301CBC0615F13ADF00A746BD /* NewsObject.h */,
+				301CBC0715F13ADF00A746BD /* NewsObject.m */,
+				301CBC0915F13E0E00A746BD /* DatabaseHelper.h */,
+				301CBC0A15F13E0E00A746BD /* DatabaseHelper.m */,
 			);
 			name = ObjectClasses;
 			sourceTree = "<group>";
@@ -138,6 +158,7 @@
 		304E117515ED353800E871EE = {
 			isa = PBXGroup;
 			children = (
+				301CBC1215F1435200A746BD /* libsqlite3.dylib */,
 				301E491D15EE860F003BBBEB /* ObjectClasses */,
 				304E118A15ED353900E871EE /* SBAMobile */,
 				304E118315ED353900E871EE /* Frameworks */,
@@ -208,6 +229,7 @@
 			children = (
 				304E119615ED353900E871EE /* ViewController.h */,
 				304E119715ED353900E871EE /* ViewController.m */,
+				301CBC0C15F13E3500A746BD /* SBADatabase.sqlite */,
 				304E11A615ED385F00E871EE /* images */,
 				304E119915ED353900E871EE /* ViewController.xib */,
 				304E118C15ED353900E871EE /* SBAMobile-Info.plist */,
@@ -314,6 +336,7 @@
 				30C7FAFD15EEA12A00862F65 /* EventListCell.xib in Resources */,
 				30C7FB0215EEA41000862F65 /* EventDetailScreen.xib in Resources */,
 				30C7FB0715EEAB2500862F65 /* JoinUsScreen.xib in Resources */,
+				301CBC0D15F13E3500A746BD /* SBADatabase.sqlite in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -338,6 +361,9 @@
 				30C7FAFC15EEA12A00862F65 /* EventListCell.m in Sources */,
 				30C7FB0115EEA41000862F65 /* EventDetailScreen.m in Sources */,
 				30C7FB0615EEAB2500862F65 /* JoinUsScreen.m in Sources */,
+				301CBC0415F135E000A746BD /* CompanyObject.m in Sources */,
+				301CBC0815F13ADF00A746BD /* NewsObject.m in Sources */,
+				301CBC0B15F13E0E00A746BD /* DatabaseHelper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

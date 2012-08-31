@@ -8,6 +8,8 @@
 
 #import "SearchScreen.h"
 #import "SearchListView.h"
+#import "DatabaseHelper.h"
+#import "CategoryObject.h"
 
 @interface SearchScreen ()
 
@@ -32,12 +34,11 @@
 {
     [super viewDidLoad];
     self.catArray=[[NSMutableArray alloc]init];
-    [self.catArray addObject:@"Cat1"];
-    [self.catArray addObject:@"Cat2"];
-    [self.catArray addObject:@"Cat3"];
-    [self.catArray addObject:@"Cat4"];
-    [self.catArray addObject:@"Cat5"];
-    [self.catArray addObject:@"Cat6"];
+    DatabaseHelper *helper=[[[DatabaseHelper alloc]init]autorelease];
+    
+    self.catArray=[helper readCategoryFromDatabase];
+    
+    
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -59,14 +60,17 @@
 
 - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
 {
-       
-    return [self.catArray objectAtIndex:row];
-
+     
+    CategoryObject *catObj=(CategoryObject *)[self.catArray objectAtIndex:row];
+    return catObj.categoryName;
+    
+    
 }
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
 {
 
-    [self.dropDownButton setTitle:[self.catArray objectAtIndex:row] forState:UIControlStateNormal];
+    CategoryObject *catObj=(CategoryObject *)[self.catArray objectAtIndex:row];
+    [self.dropDownButton setTitle:catObj.categoryName forState:UIControlStateNormal];
     [self HidePicker];
 
 }

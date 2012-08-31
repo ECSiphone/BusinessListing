@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "DatabaseHelper.h"
 
 #import "ViewController.h"
 #import "HomeScreen.h"
@@ -35,10 +36,20 @@
     navigationController =[[UINavigationController alloc]initWithRootViewController:self.screen];
     [self.navigationController setNavigationBarHidden:YES];
     
+    [self performSelectorInBackground:@selector(registeringDatabeseInBackground) withObject:nil];
+    
     self.window.rootViewController = self.navigationController;
     [self.window makeKeyAndVisible];
     return YES;
 }
+
+-(void)registeringDatabeseInBackground
+{
+
+    [DatabaseHelper checkAndCreateDatabse];
+
+}
+
 
 - (void)applicationWillResignActive:(UIApplication *)application
 {
