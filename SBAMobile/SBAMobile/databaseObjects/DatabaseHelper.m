@@ -224,7 +224,8 @@
 		if(sqlite3_prepare_v2(database, sqlStatement, -1, &compiledStatement, NULL) == SQLITE_OK) {
 			// Loop through the results and add them to the feeds array
 			while(sqlite3_step(compiledStatement) == SQLITE_ROW) {
-                
+               
+                @try{
                 
                 int companyid=sqlite3_column_int(compiledStatement, 0);
                 int catid=sqlite3_column_int(compiledStatement, 1);
@@ -253,6 +254,12 @@
                 CompanyObject *companyObject=[[CompanyObject alloc]initWithComid:companyid catid:catid name:name add1:add1 add2:add2 zip:zip state:state city:city country:country phone:phone faxNo:fax user:user modDate:moddate];            
                 [companyArray addObject:companyObject];
             }
+            @catch (NSException *ex) {
+                        NSLog(@"%@",ex);
+                    }     
+            }
+            
+                
 		}
 		// Release the compiled statement from memory
 		sqlite3_finalize(compiledStatement);

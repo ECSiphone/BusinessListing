@@ -7,6 +7,8 @@
 //
 
 #import "SearchListView.h"
+#import "DatabaseHelper.h"
+#import "CompanyObject.h"
 
 
 @interface SearchListView ()
@@ -60,15 +62,23 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    DatabaseHelper *helper=[[DatabaseHelper alloc]init];
     
-    //if(keyWord==nil||)
+    if(self.keyWord==nil||categoryId==0)
     {
-    
-    
+      if(self.keyWord==nil)
+      {
+          [helper companiesListServiceWithCategory:categoryId];        
+      }
+      else {
+          [helper companiesListServiceWithKey:self.keyWord];
+      }
     
     }
     
-    
+    else {
+        [helper companiesListServiceWithCategory:categoryId andKey:self.keyWord];
+    }
        
     
     
