@@ -71,6 +71,7 @@
 
     CategoryObject *catObj=(CategoryObject *)[self.catArray objectAtIndex:row];
     [self.dropDownButton setTitle:catObj.categoryName forState:UIControlStateNormal];
+    searchedIndex=catObj.catId;
     [self HidePicker];
 
 }
@@ -137,7 +138,7 @@
 
 - (IBAction)clickedToSearch:(id)sender {
     
-    SearchListView *list=[[SearchListView alloc]initWithNibName:@"SearchListView" bundle:nil];
+    SearchListView *list=[[SearchListView alloc]initWithCategoryIndex:searchedIndex andKeyWord:self.txtCompanyName.text];
     [self.navigationController pushViewController:list animated:YES];
     
 }

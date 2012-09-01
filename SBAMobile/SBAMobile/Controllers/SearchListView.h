@@ -11,10 +11,13 @@
 @interface SearchListView : UIViewController<UITableViewDataSource,UITableViewDelegate>
 
 
-@property (retain, nonatomic) IBOutlet UITableView *resultTbl;
 
-@property (nonatomic,retain)NSMutableArray *companyNameArray;
-@property (nonatomic,retain)NSMutableArray *descArray;
+
+@property (nonatomic,retain)NSString *keyWord;
+@property int categoryId;
+@property (retain, nonatomic) IBOutlet UITableView *resultTbl;
+@property (nonatomic,retain)NSMutableArray *companyObjectArray;
 - (IBAction)clickToBack:(id)sender;
+-(id)initWithCategoryIndex:(int)catid andKeyWord:(NSString *)key;
 
 @end

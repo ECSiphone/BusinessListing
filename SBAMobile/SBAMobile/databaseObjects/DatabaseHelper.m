@@ -128,7 +128,7 @@
 	// Open the database from the users filessytem
 	if(sqlite3_open([dbPath UTF8String], &database) == SQLITE_OK) {
 		// Setup the SQL Statement and compile it for faster access
-		const char *sqlStatement = "select * from CategoryMaster order by categoryName asc";
+		const char *sqlStatement = "select * from NewsMaster order by newsdate asc";
 		sqlite3_stmt *compiledStatement;
 		if(sqlite3_prepare_v2(database, sqlStatement, -1, &compiledStatement, NULL) == SQLITE_OK) {
 			// Loop through the results and add them to the feeds array
@@ -169,6 +169,42 @@
 }
 -(NSMutableArray *)readCompanyFromDatabase{
     
+    NSMutableArray *companyArray=[self applyingQueryOnCompanyObject:@"select * from CompanyMaster order by CompanyName asc"];
+    return companyArray;
+
+}
+
+-(NSMutableArray *)companiesListServiceWithCategory:(int)catid andKey:(NSString *)key
+{
+
+    NSMutableArray *companyArray=[self applyingQueryOnCompanyObject:@"select * from CompanyMaster order by CompanyName asc"];
+    return companyArray;
+
+}
+
+
+-(NSMutableArray *)companiesListServiceWithCategory:(int)catid
+{
+    NSString *querystr=[NSString stringWithFormat:@"select * from CompanyMaster WHERE categoryId = %d order by CompanyName asc",catid];
+    NSMutableArray *companyArray=[self applyingQueryOnCompanyObject:querystr];
+    return companyArray;
+
+
+}
+
+-(NSMutableArray *)companiesListServiceWithKey:(NSString *)key
+{
+
+
+
+
+
+}
+
+
+-(NSMutableArray *)applyingQueryOnCompanyObject:(NSString *)query
+{
+
     NSUserDefaults *defaults=[NSUserDefaults standardUserDefaults];
     NSString *dbPath=[defaults objectForKey:DATABASEPATH];
     
@@ -183,7 +219,7 @@
 	// Open the database from the users filessytem
 	if(sqlite3_open([dbPath UTF8String], &database) == SQLITE_OK) {
 		// Setup the SQL Statement and compile it for faster access
-		const char *sqlStatement = "select * from CategoryMaster order by categoryName asc";
+		const char *sqlStatement =[query UTF8String]; //"select * from CompanyMaster order by CompanyName asc";
 		sqlite3_stmt *compiledStatement;
 		if(sqlite3_prepare_v2(database, sqlStatement, -1, &compiledStatement, NULL) == SQLITE_OK) {
 			// Loop through the results and add them to the feeds array
@@ -197,9 +233,9 @@
                 
                 NSString *add1=[NSString stringWithUTF8String:(char *)sqlite3_column_text(compiledStatement, 3)];
                 
-            NSString *zip=[NSString stringWithUTF8String:(char *)sqlite3_column_text(compiledStatement,4)];
+                NSString *zip=[NSString stringWithUTF8String:(char *)sqlite3_column_text(compiledStatement,4)];
                 
-            NSString *state=[NSString stringWithUTF8String:(char *)sqlite3_column_text(compiledStatement, 5)];
+                NSString *state=[NSString stringWithUTF8String:(char *)sqlite3_column_text(compiledStatement, 5)];
                 
                 NSString *city=[NSString stringWithUTF8String:(char *)sqlite3_column_text(compiledStatement, 12)];
                 
@@ -225,11 +261,7 @@
 	sqlite3_close(database);
     
     return companyArray;
-
-
 }
-
-
 
 
 

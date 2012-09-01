@@ -21,6 +21,9 @@
 -(NSMutableArray *)readNewsFromDatabase;
 -(NSMutableArray *)readCategoryFromDatabase;
 -(NSMutableArray *)readCompanyFromDatabase;
+-(NSMutableArray *)companiesListServiceWithCategory:(int)catid andKey:(NSString *)key;
+-(NSMutableArray *)companiesListServiceWithCategory:(int)catid;
+-(NSMutableArray *)companiesListServiceWithKey:(NSString *)key;
 
 
 

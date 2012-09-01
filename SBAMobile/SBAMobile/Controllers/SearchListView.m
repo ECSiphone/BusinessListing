@@ -15,8 +15,20 @@
 
 @implementation SearchListView
 @synthesize resultTbl;
-@synthesize companyNameArray;
-@synthesize descArray;
+@synthesize keyWord;
+@synthesize categoryId;
+@synthesize companyObjectArray;
+
+
+
+-(id)initWithCategoryIndex:(int)catid andKeyWord:(NSString *)key
+{
+    self=[self initWithNibName:@"SearchListView" bundle:nil];
+    self.keyWord=key;
+    self.categoryId=catid;
+    return self;
+
+}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -30,7 +42,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
 
-    return  [self.companyNameArray count];
+    return  [self.companyObjectArray count];
 
 }
 
@@ -38,8 +50,6 @@
 {
 
     UITableViewCell *cell= [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"Cell"];
-    cell.textLabel.text=[self.companyNameArray objectAtIndex:[indexPath row]];
-    cell.detailTextLabel.text=[self.descArray objectAtIndex:[indexPath row]];
     [cell.detailTextLabel setNumberOfLines:NSIntegerMax];
     
     return cell;
@@ -50,13 +60,16 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.descArray=[[NSMutableArray alloc]init];
-    [self.descArray addObject:@"Desc1Desc1Desc1Desc1Desc1Desc1Desc1Desc1Desc1Desc1Desc1Desc1Desc1Desc1Desc1Desc1Desc1"];
-    [self.descArray addObject:@"Desc2"];
     
-    self.companyNameArray=[[NSMutableArray alloc]init];
-    [self.companyNameArray addObject:@"Compny1"];
-    [self.companyNameArray addObject:@"Compny2"];
+    //if(keyWord==nil||)
+    {
+    
+    
+    
+    }
+    
+    
+       
     
     
     // Do any additional setup after loading the view from its nib.

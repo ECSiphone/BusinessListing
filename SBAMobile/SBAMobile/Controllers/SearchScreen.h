@@ -9,6 +9,15 @@
 #import <UIKit/UIKit.h>
 
 @interface SearchScreen : UIViewController<UIPickerViewDelegate,UIPickerViewDataSource,UITextFieldDelegate>
+{
+
+
+    int searchedIndex;
+    NSString *searchKeyWord;
+
+
+
+}
 
 
 @property (retain, nonatomic) IBOutlet UITextField *txtCompanyName;
