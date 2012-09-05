@@ -27,7 +27,20 @@
 - (IBAction)clickedToViewDetail:(id)sender
 {
 
-    [delegate ClickedToDetail];
+    [delegate ClickedToDetail:eveObject];
+
+}
+
+-(void)bindDataWithEventObject:(EventObject *)eve;
+{
+    
+    eveObject=eve;
+    NSDateFormatter *formatter=[[NSDateFormatter alloc]init];
+    [formatter setDateFormat:@"dd/MM"];
+     NSString *startdate=[formatter stringFromDate:eve.startDate];
+    [self.lblDate setText:startdate];
+    [self.lblEventName setText:eve.name];
+
 
 }
 

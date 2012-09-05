@@ -8,6 +8,8 @@
 
 #import "CategoryListView.h"
 #import "MemeberListView.h"
+#import "DatabaseHelper.h"
+#import "CategoryObject.h"
 
 @interface CategoryListView ()
 
@@ -15,6 +17,7 @@
 
 @implementation CategoryListView
 @synthesize tblCategory;
+@synthesize categoryArray;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -27,8 +30,15 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
+    
+    if([self.categoryArray count]==0)
+    {
+        UIAlertView *alert=[[UIAlertView alloc]initWithTitle:@"SBA" message:@"No Category Found" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [alert show];
+    
+    }
 
-    return 10;
+    return [self.categoryArray count];
 
 }
 
@@ -37,7 +47,9 @@
 {
 
     UITableViewCell *cell=[[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Cell"];
-    cell.textLabel.text=[NSString stringWithFormat:@"category %i",[indexPath row]];
+    cell.selectionStyle=UITableViewCellSelectionStyleNone;
+    CategoryObject *catObject=(CategoryObject *)[self.categoryArray objectAtIndex:[indexPath row]];
+    cell.textLabel.text=catObject.categoryName;
     return cell;
 
 }
@@ -45,18 +57,16 @@
 -(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
 
-     return @"Category";
+     return @"Categories";
 
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-
-    MemeberListView *list=[[MemeberListView alloc]initWithCategoryId:[indexPath row]];
+    
+    CategoryObject *catObject=(CategoryObject *)[self.categoryArray objectAtIndex:[indexPath row]];
+    MemeberListView *list=[[MemeberListView alloc]initWithCategoryId:catObject.catId andCategoryName:catObject.categoryName];
     [self.navigationController pushViewController:list animated:YES];
-
-
-
 }
 
 
@@ -64,6 +74,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.categoryArray=[[NSMutableArray alloc]init];
+    DatabaseHelper *helper=[[DatabaseHelper alloc]init];
+    self.categoryArray=[helper readCategoryFromDatabase];
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -89,5 +102,21 @@
     [self.navigationController popViewControllerAnimated:YES];
     
     
+}
+
+- (IBAction)clickedToGoHome:(id)sender {
+    
+    [self.navigationController popToRootViewControllerAnimated:YES];
+}
+
+-(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+   if(buttonIndex==0)
+  {
+
+    [self.navigationController popViewControllerAnimated:YES];
+
+
+  }
 }
 @end

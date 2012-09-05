@@ -13,5 +13,6 @@
 
 - (IBAction)clickToProceed:(id)sender;
 - (IBAction)clickedToBack:(id)sender;
+- (IBAction)clickedToGoHome:(id)sender;
 
 @end

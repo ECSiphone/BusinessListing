@@ -9,10 +9,10 @@
 #import "CompanyObject.h"
 
 @implementation CompanyObject
-@synthesize catId,comId,name,add1,add2,zip,state,city,country,phoneno,fax,user,modDate;
+@synthesize catId,comId,name,add1,add2,zip,state,city,country,phoneno,fax,user,modDate,description;
 
 
--(id)initWithComid:(int)cmid catid:(int)caid name:(NSString *)n add1:(NSString *)addr1 add2:(NSString *)addr2 zip:(NSString *)z state:(NSString *)s city:(NSString *)c country:(NSString *)con phone:(NSString *)p faxNo:(NSString *)f user:(NSString *)u modDate:(NSDate *)mdat
+-(id)initWithComid:(int)cmid catid:(int)caid name:(NSString *)n add1:(NSString *)addr1 add2:(NSString *)addr2 zip:(NSString *)z state:(NSString *)s city:(NSString *)c country:(NSString *)con phone:(NSString *)p faxNo:(NSString *)f user:(NSString *)u modDate:(NSDate *)mdat anddesc:(NSString *)d
 {
     self.comId=cmid;
     self.catId=caid;
@@ -27,6 +27,7 @@
     self.phoneno=p;
     self.fax=f;
     self.modDate=mdat;
+    self.description=d;
     return self;
     
 }

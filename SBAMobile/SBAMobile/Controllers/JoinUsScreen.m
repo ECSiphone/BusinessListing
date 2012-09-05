@@ -49,4 +49,9 @@
     [self.navigationController popViewControllerAnimated:YES];
     
 }
+
+- (IBAction)clickedToGoHome:(id)sender {
+    
+     [self.navigationController popToRootViewControllerAnimated:YES];
+}
 @end

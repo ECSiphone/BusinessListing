@@ -9,6 +9,8 @@
 #import "EventList.h"
 #import "EventListCell.h"
 #import "EventDetailScreen.h"
+#import "EventObject.h"
+#import "DatabaseHelper.h"
 
 @interface EventList ()
 
@@ -17,6 +19,7 @@
 @implementation EventList
 @synthesize tblEvent;
 @synthesize eventCell;
+@synthesize eventArray;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -31,8 +34,12 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-
-    return 10;
+   if([self.eventArray count]==0)
+   {
+       UIAlertView *alert=[[UIAlertView alloc]initWithTitle:@"SBA" message:@"There is currently no event available." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+       [alert show];
+   }
+    return [self.eventArray count];
 
 }
 
@@ -42,6 +49,8 @@
 
     [[NSBundle mainBundle]loadNibNamed:@"EventListCell" owner:self options:nil];
     EventListCell *cell=self.eventCell;
+    EventObject *object=(EventObject *)[self.eventArray objectAtIndex:[indexPath row]];
+    [cell bindDataWithEventObject:object];
     cell.delegate=self;
     return cell;
 
@@ -59,10 +68,10 @@
 }
 
 
--(void)ClickedToDetail
+-(void)ClickedToDetail:(EventObject *)eve
 {
    
-    EventDetailScreen *detail=[[EventDetailScreen alloc]initWithEventId:1];
+    EventDetailScreen *detail=[[EventDetailScreen alloc]initWithEvent:eve];
     [self.navigationController pushViewController:detail animated:YES];
     
 }
@@ -70,6 +79,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.eventArray=[[NSMutableArray alloc]init];
+    
+    DatabaseHelper *helper=[[DatabaseHelper alloc]init];
+    self.eventArray=[helper readEventFromDatabse];
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -96,5 +109,10 @@
     
     [self.navigationController popViewControllerAnimated:YES];
     
+}
+
+- (IBAction)clickedToGoHome:(id)sender {
+    
+     [self.navigationController popToRootViewControllerAnimated:YES];
 }
 @end

@@ -7,19 +7,19 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "EventObject.h"
 @protocol EventListCellDelegate
 
 -(void)clickedToAdd;
--(void)ClickedToDetail;
+-(void)ClickedToDetail:(EventObject *)eve;
 
-@end;
+@end
 
 
 @interface EventListCell : UITableViewCell
 {
 
-
-
+    EventObject *eveObject;
 
 }
 
@@ -27,6 +27,10 @@
 @property (retain, nonatomic) IBOutlet UILabel *lblDate;
 
 @property (retain, nonatomic) IBOutlet UILabel *lblEventName;
+
+
+
+-(void)bindDataWithEventObject:(EventObject *)eve;
 
 - (IBAction)clickedToAddIcal:(id)sender;
 

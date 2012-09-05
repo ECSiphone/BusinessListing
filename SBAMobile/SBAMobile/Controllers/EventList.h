@@ -12,10 +12,13 @@
 @interface EventList : UIViewController<UITableViewDataSource,UITableViewDelegate,EventListCellDelegate>
 
 
+
+@property (nonatomic,retain)NSMutableArray *eventArray;
 @property (retain, nonatomic) IBOutlet UITableView *tblEvent;
 @property (retain, nonatomic) IBOutlet EventListCell *eventCell;
 
 - (IBAction)clickedToGoBack:(id)sender;
 
+- (IBAction)clickedToGoHome:(id)sender;
 
 @end

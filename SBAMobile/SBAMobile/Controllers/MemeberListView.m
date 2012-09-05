@@ -7,6 +7,9 @@
 //
 
 #import "MemeberListView.h"
+#import "CompanyObject.h"
+#import "DatabaseHelper.h"
+#import  "CompanyDetailScreen.h"
 
 @interface MemeberListView ()
 
@@ -14,12 +17,16 @@
 
 @implementation MemeberListView
 @synthesize categoryId;
+@synthesize categoryTitle;
+@synthesize companyArray;
 
 
 
--(id)initWithCategoryId:(int)catid{
+-(id)initWithCategoryId:(int)catid andCategoryName:(NSString *)catstring
+{
 
     self=[self initWithNibName:@"MemeberListView" bundle:nil];
+    self.categoryTitle=catstring;
     self.categoryId=catid;
     return self;
 }
@@ -29,6 +36,11 @@
     [self.navigationController popViewControllerAnimated:YES];
     
     
+}
+
+- (IBAction)clickedToGoHome:(id)sender {
+    
+     [self.navigationController popToRootViewControllerAnimated:YES];
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -42,8 +54,13 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
+    if([self.companyArray count]==0)
+    {
+        UIAlertView *alert=[[UIAlertView alloc]initWithTitle:@"SBA" message:@"There is no member found for this category.Please browse any other category." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [alert show];
     
-    return 10;
+    }
+    return [self.companyArray count];
     
 }
 
@@ -52,7 +69,10 @@
 {
     
     UITableViewCell *cell=[[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Cell"];
-    cell.textLabel.text= [NSString stringWithFormat:@"Test member of cat %i",categoryId];
+    cell.selectionStyle=UITableViewCellSelectionStyleNone;
+    CompanyObject *comObject=(CompanyObject *)[self.companyArray objectAtIndex:[indexPath row]];
+    cell.textLabel.text= comObject.name;
+    cell.detailTextLabel.text=comObject.description;
     return cell;
     
 }
@@ -60,23 +80,37 @@
 -(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
     
-    return @"Member List";
+    return [NSString stringWithFormat:@"Member List for %@",self.categoryTitle];
     
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
-    
-    
+  
+    CompanyObject *object=(CompanyObject *)[self.companyArray objectAtIndex:[indexPath row]];  
+    CompanyDetailScreen *detail=[[CompanyDetailScreen alloc]initWithCompanyId:object.comId];  
+    [self.navigationController pushViewController:detail animated:YES];
     
     
 }
 
+-(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+
+  if(buttonIndex==0)
+  {
+  
+      [self.navigationController popViewControllerAnimated:YES];
+  
+  }
+
+}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.companyArray=[[NSMutableArray alloc]init];
+    DatabaseHelper *helper=[[DatabaseHelper alloc]init];
+    self.companyArray=[helper companiesListServiceWithCategory:self.categoryId];
     // Do any additional setup after loading the view from its nib.
 }
 

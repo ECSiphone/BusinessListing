@@ -7,15 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "EventObject.h"
 
 @interface EventDetailScreen : UIViewController
 
 
-@property int eventId;
-
--(id)initWithEventId:(int)ids;
 
 
+-(id)initWithEvent:(EventObject *)eve;
+
+
+@property (nonatomic,retain)EventObject *eventObject;
 @property (retain, nonatomic) IBOutlet UILabel *lblEventName;
 
 @property (retain, nonatomic) IBOutlet UILabel *lblVanueNmae;
@@ -29,5 +31,6 @@
 
 - (IBAction)clickedToBack:(id)sender;
 
+- (IBAction)clickedToGoHome:(id)sender;
 
 @end

@@ -43,7 +43,12 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
+       
+    if([self.companyObjectArray count]==0)      {
+    UIAlertView *alert=[[[UIAlertView alloc]initWithTitle:@"SBA" message:@"There is no data found.Please Search again." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil]autorelease];
+    [alert show];
 
+}
     return  [self.companyObjectArray count];
 
 }
@@ -52,6 +57,11 @@
 {
 
     UITableViewCell *cell= [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"Cell"];
+    
+    CompanyObject *comapnyObj=(CompanyObject *)[self.companyObjectArray objectAtIndex:[indexPath row]];
+    [cell.textLabel setText:comapnyObj.name];
+    [cell.detailTextLabel setText:comapnyObj.description];
+    
     [cell.detailTextLabel setNumberOfLines:NSIntegerMax];
     
     return cell;
@@ -62,22 +72,25 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    companyObjectArray=[[NSMutableArray alloc]init];
     DatabaseHelper *helper=[[DatabaseHelper alloc]init];
     
-    if(self.keyWord==nil||categoryId==0)
+    if(!([self.keyWord isEqualToString:@""])&&(!(categoryId==0)))
     {
-      if(self.keyWord==nil)
-      {
-          [helper companiesListServiceWithCategory:categoryId];        
-      }
-      else {
-          [helper companiesListServiceWithKey:self.keyWord];
-      }
+      self.companyObjectArray=[helper companiesListServiceWithCategory:categoryId andKey:self.keyWord];
     
     }
-    
     else {
-        [helper companiesListServiceWithCategory:categoryId andKey:self.keyWord];
+        
+        
+        if([self.keyWord isEqualToString:@""])
+        {
+           self.companyObjectArray=[helper companiesListServiceWithCategory:categoryId];        
+        }
+        else {
+           self.companyObjectArray=[helper companiesListServiceWithKey:self.keyWord];
+        }
+        
     }
        
     
@@ -106,5 +119,15 @@
     
     [self.navigationController popViewControllerAnimated:YES];
     
+}
+
+-(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+
+ if(buttonIndex==0)
+ {
+ 
+     [self.navigationController popViewControllerAnimated:YES];
+ 
+ }
 }
 @end

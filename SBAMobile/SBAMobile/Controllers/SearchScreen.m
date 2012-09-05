@@ -138,6 +138,7 @@
 
 - (IBAction)clickedToSearch:(id)sender {
     
+    [self.txtCompanyName resignFirstResponder];  
     SearchListView *list=[[SearchListView alloc]initWithCategoryIndex:searchedIndex andKeyWord:self.txtCompanyName.text];
     [self.navigationController pushViewController:list animated:YES];
     
@@ -146,5 +147,11 @@
 - (IBAction)clickedToBack:(id)sender {
     
     [self.navigationController popViewControllerAnimated:YES];
+}
+
+- (IBAction)clickedToGoBackHome:(id)sender {
+    
+    [self.navigationController popToRootViewControllerAnimated:YES];
+    
 }
 @end

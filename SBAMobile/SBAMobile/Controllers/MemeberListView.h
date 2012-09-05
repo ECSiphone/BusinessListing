@@ -8,16 +8,18 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MemeberListView : UIViewController<UITableViewDelegate,UITableViewDataSource>
+@interface MemeberListView : UIViewController<UITableViewDelegate,UITableViewDataSource,UIAlertViewDelegate>
 
 
 
 
 
 
-
+@property (nonatomic,retain) NSMutableArray *companyArray;
+@property (nonatomic,retain) NSString *categoryTitle;
 @property int categoryId;
--(id)initWithCategoryId:(int)catid;
+-(id)initWithCategoryId:(int)catid andCategoryName:(NSString *)catstring;
 - (IBAction)clickedToGoBack:(id)sender;
+- (IBAction)clickedToGoHome:(id)sender;
 
 @end

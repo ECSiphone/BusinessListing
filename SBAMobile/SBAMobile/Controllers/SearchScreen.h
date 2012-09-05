@@ -33,6 +33,7 @@
 
 - (IBAction)clickedToBack:(id)sender;
 
+- (IBAction)clickedToGoBackHome:(id)sender;
 
 
 @end

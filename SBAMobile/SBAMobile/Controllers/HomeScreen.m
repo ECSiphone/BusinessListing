@@ -12,6 +12,7 @@
 #import "CategoryListView.h"
 #import "EventList.h"
 #import "JoinUsScreen.h"
+#import "NewsScreen.h"
 
 
 @interface HomeScreen ()
@@ -78,6 +79,10 @@
 }
 
 - (IBAction)clickedToNews:(id)sender {
+    
+    NewsScreen *screen=[[NewsScreen alloc]initWithNibName:@"NewsScreen" bundle:nil];
+    [self.navigationController pushViewController:screen animated:YES];
+
     
     
 }

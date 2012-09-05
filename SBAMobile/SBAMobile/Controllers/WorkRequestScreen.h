@@ -8,14 +8,18 @@
 
 #import <UIKit/UIKit.h>
 
-@interface WorkRequestScreen : UIViewController<UIAlertViewDelegate,UITextFieldDelegate,UITextViewDelegate>
+@interface WorkRequestScreen : UIViewController<UIAlertViewDelegate,UITextFieldDelegate,UITextViewDelegate,UIPickerViewDelegate,UIPickerViewDataSource>
 {
 
     UIControl *activeControl;
 
 }
 
+
+@property (nonatomic,retain) NSString *selectedPicker;
+@property (nonatomic,retain)NSMutableArray *categoryArray;
 @property (nonatomic,retain) NSMutableArray *budgetArray;
+@property (retain, nonatomic) IBOutlet UIPickerView *customePicker;
 
 
 @property (retain, nonatomic) IBOutlet UITextView *txtWorkDesc;
@@ -34,5 +38,9 @@
 
 @property (retain, nonatomic) IBOutlet UITextField *telNo;
 
+@property (retain, nonatomic) IBOutlet UIButton *btnBudget;
+@property (retain, nonatomic) IBOutlet UIButton *btnCategory;
+- (IBAction)clickedToGoBack:(id)sender;
+- (IBAction)clickedToGoHome:(id)sender;
 
 @end

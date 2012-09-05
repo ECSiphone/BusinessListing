@@ -18,12 +18,12 @@
 @synthesize lblDate;
 @synthesize lblPrice;
 @synthesize lblOtherInfo;
-@synthesize eventId;
+@synthesize eventObject;
 
--(id)initWithEventId:(int)ids
+-(id)initWithEvent:(EventObject *)eve
 {
     self=[self initWithNibName:@"EventDetailScreen" bundle:nil];
-    self.eventId=ids;
+    self.eventObject=eve;
     return self;
 
 }
@@ -41,6 +41,23 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self.lblEventName setText:eventObject.name];
+    [self.lblPrice setText:[NSString stringWithFormat:@"Price:%@",eventObject.price]];
+    [self.lblVanueNmae setText:[NSString stringWithFormat:@"Location:%@",eventObject.loc]];
+    
+    NSDateFormatter *formatter=[[NSDateFormatter alloc]init];
+    [formatter setDateFormat:@"dd/MM/yyyy"];
+    
+     if(eventObject.startDate==eventObject.endDate)
+         [self.lblDate setText:[formatter stringFromDate:eventObject.startDate]];
+     else {
+         [self.lblDate setText:[NSString stringWithFormat:@"%@ - %@",[formatter stringFromDate:eventObject.startDate],[formatter stringFromDate:eventObject.endDate]]];
+     }
+     
+    [self.lblOtherInfo setText:eventObject.otherinfo];
+    
+    
+    
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -77,5 +94,8 @@
     [self.navigationController popViewControllerAnimated:YES];
     
     
+}
+
+- (IBAction)clickedToGoHome:(id)sender {
 }
 @end
