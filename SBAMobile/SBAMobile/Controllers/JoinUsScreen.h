@@ -10,6 +10,7 @@
 
 @interface JoinUsScreen : UIViewController
 
+@property (retain, nonatomic) IBOutlet UITextView *txtJoinus;
 
 - (IBAction)clickToProceed:(id)sender;
 - (IBAction)clickedToBack:(id)sender;

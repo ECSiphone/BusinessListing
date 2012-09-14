@@ -8,6 +8,22 @@
 	<string>${PRODUCT_NAME}</string>
 	<key>CFBundleExecutable</key>
 	<string>${EXECUTABLE_NAME}</string>
+	<key>CFBundleIconFiles</key>
+	<array>
+		<string>icon.png</string>
+		<string>iconlarge.png</string>
+	</array>
+	<key>CFBundleIcons</key>
+	<dict>
+		<key>CFBundlePrimaryIcon</key>
+		<dict>
+			<key>CFBundleIconFiles</key>
+			<array>
+				<string>icon.png</string>
+				<string>iconlarge.png</string>
+			</array>
+		</dict>
+	</dict>
 	<key>CFBundleIdentifier</key>
 	<string>ECS.${PRODUCT_NAME:rfc1034identifier}</string>
 	<key>CFBundleInfoDictionaryVersion</key>
@@ -22,8 +38,10 @@
 	<string>????</string>
 	<key>CFBundleVersion</key>
 	<string>1.0</string>
-	<key>LSRequiresIPhoneOS</key>
-	<true/>
+	<key>UIAppFonts</key>
+	<array>
+		<string>CANDARA.TTF</string>
+	</array>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>

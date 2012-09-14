@@ -28,4 +28,8 @@
 @property (retain, nonatomic) IBOutlet UILabel *lblDiscount;
 @property (retain, nonatomic) IBOutlet UILabel *lblContact;
 
+
+@property (retain, nonatomic) IBOutlet UILabel *capdesc;
+
+
 @end

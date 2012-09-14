@@ -9,6 +9,7 @@
 #import "SearchListView.h"
 #import "DatabaseHelper.h"
 #import "CompanyObject.h"
+#import "CompanyDetailScreen.h"
 
 
 @interface SearchListView ()
@@ -55,10 +56,26 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-
+    
+    UIFont *regularfont=[UIFont fontWithName:@"candara" size:17.0f];
+    UIFont *smallfont=[UIFont fontWithName:@"candara" size:14.0f];
+    
+    
+    UIColor *blue=[UIColor colorWithRed:0.192f green:0.341f blue:.596f alpha:1.0];
+    
+    
+    
     UITableViewCell *cell= [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"Cell"];
+    cell.selectionStyle=UITableViewCellSelectionStyleNone;
     
     CompanyObject *comapnyObj=(CompanyObject *)[self.companyObjectArray objectAtIndex:[indexPath row]];
+    
+    [cell.textLabel setFont:regularfont];
+    [cell.detailTextLabel setFont:smallfont];
+    
+    [cell.textLabel setTextColor:blue];
+    [cell.detailTextLabel setTextColor:blue];
+    
     [cell.textLabel setText:comapnyObj.name];
     [cell.detailTextLabel setText:comapnyObj.description];
     
@@ -81,8 +98,6 @@
     
     }
     else {
-        
-        
         if([self.keyWord isEqualToString:@""])
         {
            self.companyObjectArray=[helper companiesListServiceWithCategory:categoryId];        
@@ -97,6 +112,17 @@
     
     // Do any additional setup after loading the view from its nib.
 }
+
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    CompanyObject *comapnyObj=(CompanyObject *)[self.companyObjectArray objectAtIndex:[indexPath row]];
+    CompanyDetailScreen *scr=[[CompanyDetailScreen alloc]initWithCompanyId:comapnyObj.comId];
+    [self.navigationController pushViewController:scr animated:YES];
+   
+}
+
 
 - (void)viewDidUnload
 {

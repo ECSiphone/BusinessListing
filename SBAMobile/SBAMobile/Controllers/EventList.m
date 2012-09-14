@@ -49,6 +49,7 @@
 
     [[NSBundle mainBundle]loadNibNamed:@"EventListCell" owner:self options:nil];
     EventListCell *cell=self.eventCell;
+    cell.selectionStyle=UITableViewCellSelectionStyleNone;
     EventObject *object=(EventObject *)[self.eventArray objectAtIndex:[indexPath row]];
     [cell bindDataWithEventObject:object];
     cell.delegate=self;
@@ -60,9 +61,6 @@
 {
 // TODO : code to add event into calenderl;
     
-    
-    UIAlertView *alert=[[UIAlertView alloc]initWithTitle:@"Message" message:@"Event Is Added To Your iCal." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
-    [alert show];
 
 
 }
@@ -114,5 +112,32 @@
 - (IBAction)clickedToGoHome:(id)sender {
     
      [self.navigationController popToRootViewControllerAnimated:YES];
+}
+
+- (IBAction)clickedToAddAllEvents:(id)sender {
+    
+    
+    for(int i=0; i<[eventArray count];i++)    
+    {  
+        EventObject *object=(EventObject *)[self.eventArray objectAtIndex:i];
+        
+        EKEventStore *eventStore = [[EKEventStore alloc] init];
+        
+        EKEvent *event  = [EKEvent eventWithEventStore:eventStore];
+        event.title     = object.name;
+        event.startDate = object.startDate;
+        event.endDate   = object.endDate;
+        
+        [event setCalendar:[eventStore defaultCalendarForNewEvents]];
+        NSError *err;
+        [eventStore saveEvent:event span:EKSpanThisEvent error:&err];       
+    }
+    
+    
+    
+    UIAlertView *alert=[[UIAlertView alloc]initWithTitle:@"Message" message:@"Events Are Added To Your iCal." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    [alert show];
+
+    
 }
 @end

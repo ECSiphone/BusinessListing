@@ -37,7 +37,14 @@
     eveObject=eve;
     NSDateFormatter *formatter=[[NSDateFormatter alloc]init];
     [formatter setDateFormat:@"dd/MM"];
-     NSString *startdate=[formatter stringFromDate:eve.startDate];
+    
+    NSString *startdate=[formatter stringFromDate:eve.startDate];
+    UIFont *regularfont=[UIFont fontWithName:@"candara" size:17.0f];
+    
+    [self.lblDate setFont:regularfont];
+    [self.lblEventName setFont:regularfont];
+    
+    
     [self.lblDate setText:startdate];
     [self.lblEventName setText:eve.name];
 

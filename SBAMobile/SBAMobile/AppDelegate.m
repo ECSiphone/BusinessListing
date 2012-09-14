@@ -30,6 +30,8 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
+    
+    sleep(3);
     // Override point for customization after application launch.
     //self.viewController = [[[ViewController alloc] initWithNibName:@"ViewController" bundle:nil] autorelease];
     self.screen = [[[HomeScreen alloc] initWithNibName:@"HomeScreen" bundle:nil] autorelease];

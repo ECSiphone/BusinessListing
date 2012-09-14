@@ -19,6 +19,8 @@
 
 }
 
+@property (retain, nonatomic) IBOutlet UILabel *lblbusiness;
+@property (retain, nonatomic) IBOutlet UILabel *lblcate;
 
 @property (retain, nonatomic) IBOutlet UITextField *txtCompanyName;
 @property (nonatomic,retain)NSMutableArray *catArray;

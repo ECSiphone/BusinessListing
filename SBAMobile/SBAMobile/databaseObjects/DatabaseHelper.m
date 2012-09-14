@@ -27,12 +27,10 @@
     
     NSString *databasePath;
     NSString *databaseName=@"SBADatabase.sqlite";
-    
-	NSArray *documentPaths=NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSArray *documentPaths=NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
 	NSString *documentsDir=[documentPaths objectAtIndex:0];
 	databasePath=[documentsDir stringByAppendingPathComponent:databaseName];
-    
-     NSUserDefaults *defaults=[NSUserDefaults standardUserDefaults];
+    NSUserDefaults *defaults=[NSUserDefaults standardUserDefaults];
     [defaults setObject:databasePath forKey:DATABASEPATH];
     [defaults synchronize];
     [DatabaseHelper copyDatabaseAtPath];
@@ -81,15 +79,29 @@
 			// Loop through the results and add them to the feeds array
 			while(sqlite3_step(compiledStatement) == SQLITE_ROW) {
                 
+                NSString *catname,*username,*modstr;
+                
                 
                 int catid=sqlite3_column_int(compiledStatement, 0);
             
-                NSString *catname=[NSString stringWithUTF8String:(char *)sqlite3_column_text(compiledStatement, 1)];
-                NSString *username=[NSString stringWithUTF8String:(char *)sqlite3_column_text(compiledStatement, 2)];
+                @try {
+                    catname=[NSString stringWithUTF8String:(char *)sqlite3_column_text(compiledStatement, 1)];
+                }@catch (NSException *ex) {
+                    catname=@"";
+                }
                 
-                
-                NSString *modstr=[NSString stringWithUTF8String:(char *)sqlite3_column_text(compiledStatement, 3)];
-                 
+                 @try {
+                username=[NSString stringWithUTF8String:(char *)sqlite3_column_text(compiledStatement, 2)];
+                 }@catch (NSException *ex) {
+                     username=@"";
+                 }
+
+                @try {
+
+                modstr=[NSString stringWithUTF8String:(char *)sqlite3_column_text(compiledStatement, 3)];
+                }@catch (NSException *ex) {
+                    modstr=@"";
+                }
                 NSDate *moddate=[formatter dateFromString:modstr];
                 
                 
@@ -185,7 +197,7 @@
 			while(sqlite3_step(compiledStatement) == SQLITE_ROW) {
                 
                 
-                NSString *name,*desc,*loca,*price,*user,*startdate,*enddate,*modate,*otherinfo;
+                NSString *name,*desc,*loca,*price,*user,*startdate,*enddate,*modate,*otherinfo,*nonmemberprice;
                 NSDate *st,*end,*mod;
                 
                 int eventid=sqlite3_column_int(compiledStatement, 0);
@@ -228,8 +240,11 @@
                 @try{
                     otherinfo=[NSString stringWithUTF8String:(char *)sqlite3_column_text(compiledStatement, 9)];}@catch(NSException *ex){otherinfo=@"";}
                 
+                @try{
+                    nonmemberprice=[NSString stringWithUTF8String:(char *)sqlite3_column_text(compiledStatement, 10)];}@catch(NSException *ex){nonmemberprice=@"";}
                 
-                EventObject *eventObject=[[EventObject alloc]initWithId:eventid name:name desc:desc startDate:st endDate:end loc:loca price:price user:user modDate:mod otherinfo:otherinfo];
+                
+                EventObject *eventObject=[[EventObject alloc]initWithId:eventid name:name desc:desc startDate:st endDate:end loc:loca price:price user:user modDate:mod otherinfo:otherinfo nonMemberPrice:nonmemberprice];
                 [eventArray addObject:eventObject];
             }
 		}
@@ -316,7 +331,7 @@
                
                 
                 int companyid,catid;
-                NSString *name,*add1,*zip,*state,*city,*country,*phone,*fax,*user,*add2,*desc;
+                NSString *name,*add1,*zip,*state,*city,*country,*phone,*fax,*user,*add2,*desc,*discount;
                 NSDate *moddate;
                 
                 @try{
@@ -362,10 +377,13 @@
                 
                 @try{    
                     desc=[NSString stringWithUTF8String:(char *)sqlite3_column_text(compiledStatement, 13)];}@catch (NSException *ex) {desc=@"";}
+                
+                @try{    
+                    discount=[NSString stringWithUTF8String:(char *)sqlite3_column_text(compiledStatement, 13)];}@catch (NSException *ex) {discount=@"";}
 
                 
                 moddate=[formatter dateFromString:modstr];
-                CompanyObject *companyObject=[[CompanyObject alloc]initWithComid:companyid catid:catid name:name add1:add1 add2:add2 zip:zip state:state city:city country:country phone:phone faxNo:fax user:user modDate:moddate anddesc:desc];            
+                CompanyObject *companyObject=[[CompanyObject alloc]initWithComid:companyid catid:catid name:name add1:add1 add2:add2 zip:zip state:state city:city country:country phone:phone faxNo:fax user:user modDate:moddate anddesc:desc discount:discount];            
                 [companyArray addObject:companyObject];
             
             }

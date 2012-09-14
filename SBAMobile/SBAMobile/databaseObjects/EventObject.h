@@ -22,7 +22,8 @@
 @property (nonatomic,retain)NSDate *endDate;
 @property (nonatomic,retain)NSDate *modDate;
 @property (nonatomic,retain)NSString *otherinfo;
+@property (nonatomic,retain)NSString *nonMemberPrice;
 
--(id)initWithId:(int)ids name:(NSString *)n desc:(NSString *)d startDate:(NSDate *)sd endDate:(NSDate *)ed loc:(NSString *)l price:(NSString *)p user:(NSString *)u modDate:(NSDate *)mod otherinfo:(NSString *)o;
+-(id)initWithId:(int)ids name:(NSString *)n desc:(NSString *)d startDate:(NSDate *)sd endDate:(NSDate *)ed loc:(NSString *)l price:(NSString *)p user:(NSString *)u modDate:(NSDate *)mod otherinfo:(NSString *)o nonMemberPrice:(NSString *)nbp;
 
 @end

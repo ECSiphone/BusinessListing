@@ -1,4 +1,4 @@
-//
+ //
 //  EventList.h
 //  SBAMobile
 //
@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "EventListCell.h"
+#import <EventKit/EventKit.h>
 
 @interface EventList : UIViewController<UITableViewDataSource,UITableViewDelegate,EventListCellDelegate>
 
@@ -18,7 +19,7 @@
 @property (retain, nonatomic) IBOutlet EventListCell *eventCell;
 
 - (IBAction)clickedToGoBack:(id)sender;
-
 - (IBAction)clickedToGoHome:(id)sender;
+- (IBAction)clickedToAddAllEvents:(id)sender;
 
 @end

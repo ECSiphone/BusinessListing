@@ -17,6 +17,8 @@
 
 @implementation SearchScreen
 @synthesize catPicker;
+@synthesize lblbusiness;
+@synthesize lblcate;
 @synthesize txtCompanyName;
 @synthesize catArray;
 @synthesize dropDownButton;
@@ -33,6 +35,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    UIFont *regularfont=[UIFont fontWithName:@"candara" size:20.0f];
+    
+    [lblcate setFont:regularfont];
+    [lblbusiness setFont:regularfont];
+    
     self.catArray=[[NSMutableArray alloc]init];
     DatabaseHelper *helper=[[[DatabaseHelper alloc]init]autorelease];
     
@@ -84,6 +92,8 @@
     [self setTxtCompanyName:nil];
     [self setCatPicker:nil];
     [self setDropDownButton:nil];
+    [self setLblbusiness:nil];
+    [self setLblcate:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -98,6 +108,8 @@
     [txtCompanyName release];
     [catPicker release];
     [dropDownButton release];
+    [lblbusiness release];
+    [lblcate release];
     [super dealloc];
 }
 - (IBAction)clickedToOpenPicker:(id)sender {

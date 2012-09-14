@@ -15,9 +15,15 @@
 @implementation EventDetailScreen
 @synthesize lblEventName;
 @synthesize lblVanueNmae;
+@synthesize nonmemberprice;
 @synthesize lblDate;
 @synthesize lblPrice;
+@synthesize lblpricenonmember;
 @synthesize lblOtherInfo;
+@synthesize lblcaploc;
+@synthesize lblcapvalue;
+@synthesize lblcapmemberprice;
+@synthesize lblcapnonmemberprice;
 @synthesize eventObject;
 
 -(id)initWithEvent:(EventObject *)eve
@@ -41,14 +47,50 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    
+    UIFont *regularfont=[UIFont fontWithName:@"candara" size:17.0f];
+    
+//    UIFont *regularfont=[UIFont fontWithName:@"candara" size:20.0f];
+    
+   // [lblcaploc setFont:regularfont];
+   // [lblcapmemberprice setFont:regularfont];
+   // [lblcapnonmemberprice setFont:regularfont];
+    [lblDate setFont:regularfont];
+    //[lblEventName setFont:regularfont];
+    [lblOtherInfo setFont:regularfont];
+    [lblPrice setFont:regularfont];
+    [lblpricenonmember setFont:regularfont];
+    [lblVanueNmae setFont:regularfont];
+    
+    
     [self.lblEventName setText:eventObject.name];
-    [self.lblPrice setText:[NSString stringWithFormat:@"Price:%@",eventObject.price]];
-    [self.lblVanueNmae setText:[NSString stringWithFormat:@"Location:%@",eventObject.loc]];
+    
+    
+    NSString *price;
+    if([eventObject.price isEqualToString:@""])
+        price=@"--";
+    else {
+        price=[NSString stringWithFormat:@"$%@",eventObject.price];
+    }
+    
+    [self.lblPrice setText:price];
+    
+    NSString *nonMemberPrice;
+    
+    if([eventObject.nonMemberPrice isEqualToString:@""])
+        nonMemberPrice=@"--";
+    else {
+        nonMemberPrice=[NSString stringWithFormat:@"$%@",eventObject.nonMemberPrice];
+    }
+    
+    [self.nonmemberprice setText:nonMemberPrice];
+    [self.lblVanueNmae setText:[NSString stringWithFormat:@"%@",eventObject.loc]];
     
     NSDateFormatter *formatter=[[NSDateFormatter alloc]init];
     [formatter setDateFormat:@"dd/MM/yyyy"];
     
-     if(eventObject.startDate==eventObject.endDate)
+    if([eventObject.startDate isEqualToDate:eventObject.endDate])
          [self.lblDate setText:[formatter stringFromDate:eventObject.startDate]];
      else {
          [self.lblDate setText:[NSString stringWithFormat:@"%@ - %@",[formatter stringFromDate:eventObject.startDate],[formatter stringFromDate:eventObject.endDate]]];
@@ -68,6 +110,12 @@
     [self setLblDate:nil];
     [self setLblPrice:nil];
     [self setLblOtherInfo:nil];
+    [self setNonmemberprice:nil];
+    [self setLblpricenonmember:nil];
+    [self setLblcaploc:nil];
+    [self setLblcapvalue:nil];
+    [self setLblcapmemberprice:nil];
+    [self setLblcapnonmemberprice:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -84,6 +132,12 @@
     [lblDate release];
     [lblPrice release];
     [lblOtherInfo release];
+    [nonmemberprice release];
+    [lblpricenonmember release];
+    [lblcaploc release];
+    [lblcapvalue release];
+    [lblcapmemberprice release];
+    [lblcapnonmemberprice release];
     [super dealloc];
 }
 - (IBAction)clickedToRegister:(id)sender {

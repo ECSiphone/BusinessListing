@@ -9,10 +9,10 @@
 #import "EventObject.h"
 
 @implementation EventObject
-@synthesize name,desc,startDate,endDate,modDate,price,user,loc,eventId,otherinfo;
+@synthesize name,desc,startDate,endDate,modDate,price,user,loc,eventId,otherinfo,nonMemberPrice;
 
 
--(id)initWithId:(int)ids name:(NSString *)n desc:(NSString *)d startDate:(NSDate *)sd endDate:(NSDate *)ed loc:(NSString *)l price:(NSString *)p user:(NSString *)u modDate:(NSDate *)mod otherinfo:(NSString *)o
+-(id)initWithId:(int)ids name:(NSString *)n desc:(NSString *)d startDate:(NSDate *)sd endDate:(NSDate *)ed loc:(NSString *)l price:(NSString *)p user:(NSString *)u modDate:(NSDate *)mod otherinfo:(NSString *)o nonMemberPrice:(NSString *)nbp
 {
     self.eventId=ids;
     self.name=n;
@@ -24,6 +24,7 @@
     self.user=u;
     self.modDate=mod;
     self.otherinfo=o;
+    self.nonMemberPrice=nbp;
     return self;
 
 }

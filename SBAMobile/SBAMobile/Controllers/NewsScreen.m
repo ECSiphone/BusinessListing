@@ -42,33 +42,35 @@
     {
         NewsObject *newsObj=[newsArray objectAtIndex:i]; 
         UILabel *titleLable=[[UILabel alloc]initWithFrame:CGRectMake(scrollView.frame.size.width*i+20, 0, scrollView.frame.size.width-20, 50)];
-        [titleLable setFont:[UIFont fontWithName:@"Helvetica-Bold" size:22.0]];
+        [titleLable setFont:[UIFont fontWithName:@"Helvetica-Bold" size:17.0]];
         [titleLable setTextColor:[UIColor colorWithRed:.1058 green:.2313 blue:.5607 alpha:1.0]];
         [titleLable setText:newsObj.newsHead];
         [titleLable setBackgroundColor:[UIColor clearColor]];
+        [titleLable setNumberOfLines:2];
         [scrollView addSubview:titleLable];
         
         
         NSDateFormatter *forrmatter=[[NSDateFormatter alloc]init];
         [forrmatter setDateFormat:@"dd/MM/yyyy"];
         
-        UILabel *newsDate=[[UILabel alloc]initWithFrame:CGRectMake(scrollView.frame.size.width*i+20, 50, scrollView.frame.size.width-20, 25)];
+        UILabel *newsDate=[[UILabel alloc]initWithFrame:CGRectMake(scrollView.frame.size.width*i+20,40, scrollView.frame.size.width-20, 25)];
         [newsDate setText:[forrmatter stringFromDate:newsObj.newsDate]];
+        [newsDate setFont:[UIFont fontWithName:@"candara" size:17.0f]];
         [newsDate setTextColor:[UIColor colorWithRed:0.6235 green:0.6235 blue:0.6235 alpha:1.0]];
         [newsDate setBackgroundColor:[UIColor clearColor]];
         [scrollView addSubview:newsDate];
 
     
-        UITextView *textview=[[UITextView alloc]initWithFrame:CGRectMake(scrollView.frame.size.width*i+15, 100, scrollView.frame.size.width-20, 200)];
+        UITextView *textview=[[UITextView alloc]initWithFrame:CGRectMake(scrollView.frame.size.width*i+15,60, scrollView.frame.size.width-20,266)];
         [textview setText:newsObj.content];
         [textview setEditable:NO];
-        [textview setFont:[UIFont systemFontOfSize:18]];
+        [textview setFont:[UIFont fontWithName:@"candara" size:15.0f]];
         [textview setBackgroundColor:[UIColor clearColor]];
         [scrollView addSubview:textview];
         
      }
     
-    [scrollView setContentSize:CGSizeMake(scrollView.frame.size.width*[newsArray count], 307)];
+    [scrollView setContentSize:CGSizeMake(scrollView.frame.size.width*[newsArray count], 306)];
     
     // Do any additional setup after loading the view from its nib.
 }

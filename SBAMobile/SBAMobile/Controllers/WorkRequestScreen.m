@@ -30,6 +30,15 @@
 @synthesize budgetArray;
 @synthesize customePicker;
 @synthesize categoryArray;
+@synthesize lbldesc;
+@synthesize lblbud;
+@synthesize lblcat;
+@synthesize lbldetail;
+@synthesize lblname;
+@synthesize lblemail;
+@synthesize lblcomp;
+@synthesize telephone;
+@synthesize lblReq;
 @synthesize selectedPicker;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -45,17 +54,28 @@
 {
     [super viewDidLoad];
     
-    self.categoryArray=[[NSMutableArray alloc]init];
+    UIFont *regularfont=[UIFont fontWithName:@"candara" size:15.0f];
     
+    [lblbud setFont:regularfont];
+    [lbldesc setFont:regularfont];
+    [lblcat setFont:regularfont];
+    [lblcomp setFont:regularfont];
+    [lbldetail setFont:regularfont];
+    [lblemail setFont:regularfont];
+    [lblname setFont:regularfont];
+    //[lblReq setFont:regularfont];
+    [telephone setFont:regularfont];
+    
+    self.categoryArray=[[NSMutableArray alloc]init];
     DatabaseHelper *helper=[[DatabaseHelper alloc]init];
     self.categoryArray=[helper readCategoryFromDatabase];
     
      self.budgetArray=[[NSMutableArray alloc]init];
-     [self.budgetArray addObject:@"budget1"];
-     [self.budgetArray addObject:@"budget2"];
-     [self.budgetArray addObject:@"budget3"];
-     [self.budgetArray addObject:@"budget4"];
-     [self.budgetArray addObject:@"budget5"];
+     [self.budgetArray addObject:@"$0-$250"];
+     [self.budgetArray addObject:@"$250-$500"];
+     [self.budgetArray addObject:@"$500-$1000"];
+     [self.budgetArray addObject:@"$1000-$2500"];
+     [self.budgetArray addObject:@"$2500+"];
     
     
     [self.scrlView setContentSize:CGSizeMake(320, 600)];
@@ -133,14 +153,14 @@
 
 -(void)showKeyboard
 {
-     [self.scrlView scrollRectToVisible:CGRectMake(self.scrlView.frame.origin.x, activeControl.frame.origin.y, self.scrlView.frame.size.width, 200) animated:YES];
+     [self.scrlView scrollRectToVisible:CGRectMake(self.scrlView.frame.origin.x, activeControl.frame.origin.y, self.scrlView.frame.size.width, 300) animated:YES];
 
 }
 
 -(void)hideKeyboard
 {
 
-    [self.scrlView scrollRectToVisible:CGRectZero animated:YES];
+    [self.scrlView scrollRectToVisible:CGRectMake(self.scrlView.frame.origin.x,self.scrlView.frame.origin.y-81, self.scrlView.frame.size.width, 300) animated:YES];
     
 }
 
@@ -214,6 +234,15 @@
     [self setCustomePicker:nil];
     [self setBtnBudget:nil];
     [self setBtnCategory:nil];
+    [self setLbldesc:nil];
+    [self setLblbud:nil];
+    [self setLblcat:nil];
+    [self setLbldetail:nil];
+    [self setLblname:nil];
+    [self setLblemail:nil];
+    [self setLblcomp:nil];
+    [self setTelephone:nil];
+    [self setLblReq:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -234,6 +263,15 @@
     [customePicker release];
     [btnBudget release];
     [btnCategory release];
+    [lbldesc release];
+    [lblbud release];
+    [lblcat release];
+    [lbldetail release];
+    [lblname release];
+    [lblemail release];
+    [lblcomp release];
+    [telephone release];
+    [lblReq release];
     [super dealloc];
 }
 - (IBAction)clickedToOpenBudget:(id)sender {

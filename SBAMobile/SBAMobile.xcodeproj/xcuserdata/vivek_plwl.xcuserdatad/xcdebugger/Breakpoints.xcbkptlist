@@ -13,7 +13,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "126"
          endingLineNumber = "126"
-         landmarkName = "-viewWillAppear:"
+         landmarkName = "-textView:shouldChangeTextInRange:replacementText:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -21,12 +21,51 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "SBAMobile/databaseObjects/DatabaseHelper.m"
-         timestampString = "368158025.57647"
+         timestampString = "369078383.729748"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "84"
-         endingLineNumber = "84"
+         startingLineNumber = "82"
+         endingLineNumber = "82"
          landmarkName = "-readCategoryFromDatabase"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "SBAMobile/Controllers/CategoryListView.m"
+         timestampString = "369078474.115333"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "98"
+         endingLineNumber = "98"
+         landmarkName = "-viewDidLoad"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "SBAMobile/databaseObjects/DatabaseHelper.m"
+         timestampString = "369078143.118476"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "62"
+         endingLineNumber = "62"
+         landmarkName = "-readCategoryFromDatabase"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "SBAMobile/Controllers/MemeberListView.m"
+         timestampString = "369087768.234176"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "76"
+         endingLineNumber = "76"
+         landmarkName = "-tableView:cellForRowAtIndexPath:"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

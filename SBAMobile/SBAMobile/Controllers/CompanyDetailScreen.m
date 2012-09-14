@@ -20,6 +20,7 @@
 @synthesize lblServiceOfferd;
 @synthesize lblDiscount;
 @synthesize lblContact;
+@synthesize capdesc;
 @synthesize companyId;
 @synthesize comObject;
 @synthesize scrlView;
@@ -61,7 +62,15 @@
     DatabaseHelper *helper=[[DatabaseHelper alloc]init];
     self.comObject=[helper comapnyDetailWithCompanyId:self.companyId];
     
-    [self.scrlView setContentSize:CGSizeMake(320, 700)];
+    [self.scrlView setContentSize:CGSizeMake(320,700)];
+    
+    
+     UIFont *regularfont=[UIFont fontWithName:@"candara" size:17.0f];
+    
+    [lblCompanyNmae setFont:regularfont];
+    [lblContact setFont:regularfont];
+    [lblDiscount setFont:regularfont];
+    [lblServiceOfferd setFont:regularfont];
     
     
     [self.lblCompanyNmae setText:self.comObject.name];
@@ -69,7 +78,7 @@
     [self.lblServiceOfferd setText:@""];
     [self.lblDiscount setText:@""];
     
-    NSString *address=[NSString stringWithFormat:@"%@,\n%@,\n%@, %@, %@, %@\n Phone No:%@\nFax No:%@",self.comObject.add1,self.comObject.add2,self.comObject.city,self.comObject.state,self.comObject.country,self.comObject.zip,self.comObject.phoneno,self.comObject.fax];
+    NSString *address=[NSString stringWithFormat:@"%@,\n%@,\n%@, %@, %@, %@\nPhone No:%@\nFax No:%@",self.comObject.add1,self.comObject.add2,self.comObject.city,self.comObject.state,self.comObject.country,self.comObject.zip,self.comObject.phoneno,self.comObject.fax];
     [self.lblContact setText:address];
     
     
@@ -86,6 +95,7 @@
     [self setLblDiscount:nil];
     [self setLblContact:nil];
     [self setScrlView:nil];
+    [self setCapdesc:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -103,6 +113,7 @@
     [lblDiscount release];
     [lblContact release];
     [scrlView release];
+    [capdesc release];
     [super dealloc];
 }
 @end

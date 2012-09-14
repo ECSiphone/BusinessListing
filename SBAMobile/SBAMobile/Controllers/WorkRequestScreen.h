@@ -16,6 +16,28 @@
 }
 
 
+@property (retain, nonatomic) IBOutlet UILabel *lbldesc;
+
+@property (retain, nonatomic) IBOutlet UILabel *lblbud;
+
+@property (retain, nonatomic) IBOutlet UILabel *lblcat;
+
+@property (retain, nonatomic) IBOutlet UILabel *lbldetail;
+
+@property (retain, nonatomic) IBOutlet UILabel *lblname;
+
+@property (retain, nonatomic) IBOutlet UILabel *lblemail;
+
+@property (retain, nonatomic) IBOutlet UILabel *lblcomp;
+
+@property (retain, nonatomic) IBOutlet UILabel *telephone;
+@property (retain, nonatomic) IBOutlet UILabel *lblReq;
+
+
+
+
+
+
 @property (nonatomic,retain) NSString *selectedPicker;
 @property (nonatomic,retain)NSMutableArray *categoryArray;
 @property (nonatomic,retain) NSMutableArray *budgetArray;

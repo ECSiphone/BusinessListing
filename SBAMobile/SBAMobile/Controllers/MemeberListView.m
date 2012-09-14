@@ -68,11 +68,35 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
-    UITableViewCell *cell=[[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Cell"];
+    UITableViewCell *cell=[[UITableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"Cell"];
     cell.selectionStyle=UITableViewCellSelectionStyleNone;
     CompanyObject *comObject=(CompanyObject *)[self.companyArray objectAtIndex:[indexPath row]];
     cell.textLabel.text= comObject.name;
+    
+    
     cell.detailTextLabel.text=comObject.description;
+    
+    UIFont *regularfont=[UIFont fontWithName:@"candara" size:20.0f];
+    UIFont *smallfont=[UIFont fontWithName:@"candara" size:14.0f];
+    
+    UIColor *blue=[UIColor colorWithRed:0.192f green:0.341f blue:.596f alpha:1.0];
+    [cell.textLabel setTextColor:blue];
+    [cell.detailTextLabel setTextColor:blue];
+    
+    
+    [cell.textLabel setFont:regularfont];
+    [cell.detailTextLabel setFont:smallfont];
+    
+    
+    [cell.detailTextLabel setNumberOfLines:3];
+    
+    UIImageView *imagev=[[[UIImageView alloc]initWithFrame:CGRectMake(312, 45, 5, 10)]autorelease];
+    [imagev setImage:[UIImage imageNamed:@"arrow.png"]];
+    
+    [cell addSubview:imagev];
+    
+    
+    
     return cell;
     
 }

@@ -29,11 +29,12 @@
 @property (nonatomic,retain)NSString *user;
 @property (nonatomic,retain)NSDate *modDate;
 @property (nonatomic,retain)NSString *description;
+@property (nonatomic,retain)NSString *discount;
 
 
 
 
--(id)initWithComid:(int)cmid catid:(int)caid name:(NSString *)n add1:(NSString *)add1 add2:(NSString *)add2 zip:(NSString *)z state:(NSString *)s city:(NSString *)c country:(NSString *)con phone:(NSString *)p faxNo:(NSString *)f user:(NSString *)u modDate:(NSDate *)mdat anddesc:(NSString *)d;
+-(id)initWithComid:(int)cmid catid:(int)caid name:(NSString *)n add1:(NSString *)add1 add2:(NSString *)add2 zip:(NSString *)z state:(NSString *)s city:(NSString *)c country:(NSString *)con phone:(NSString *)p faxNo:(NSString *)f user:(NSString *)u modDate:(NSDate *)mdat anddesc:(NSString *)d discount:(NSString *)disc;
 
 
 @end

@@ -49,7 +49,29 @@
     UITableViewCell *cell=[[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Cell"];
     cell.selectionStyle=UITableViewCellSelectionStyleNone;
     CategoryObject *catObject=(CategoryObject *)[self.categoryArray objectAtIndex:[indexPath row]];
+    
+    UIFont *regularfont=[UIFont fontWithName:@"candara" size:17.0f];
+    UIFont *smallfont=[UIFont fontWithName:@"candara" size:14.0f];
+    
+    [cell.textLabel setFont:regularfont];
+    [cell.detailTextLabel setFont:smallfont];
+    [cell.imageView setImage:[UIImage imageNamed:[NSString stringWithFormat:@"%i.png",catObject.catId]]];
+    
+    [cell.imageView setBackgroundColor:[UIColor clearColor]];
+    
+    ///
+    UIColor *blue=[UIColor colorWithRed:0.192f green:0.341f blue:.596f alpha:1.0];
+    [cell.textLabel setTextColor:blue];
+    [cell.detailTextLabel setTextColor:blue];
+
+    ///
     cell.textLabel.text=catObject.categoryName;
+    [cell.textLabel setNumberOfLines:NSIntegerMax];
+    
+    UIImageView *imagev=[[[UIImageView alloc]initWithFrame:CGRectMake(312, 20, 5, 10)]autorelease];
+    [imagev setImage:[UIImage imageNamed:@"arrow.png"]];
+    [cell addSubview:imagev];
+    
     return cell;
 
 }
